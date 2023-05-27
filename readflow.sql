@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.4.16-MariaDB - mariadb.org binary distribution
+-- Server version:               10.4.28-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
 -- HeidiSQL Version:             12.4.0.6659
 -- --------------------------------------------------------
@@ -16,7 +16,7 @@
 
 
 -- Dumping database structure for readflow
-CREATE DATABASE IF NOT EXISTS `readflow` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE IF NOT EXISTS `readflow` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `readflow`;
 
 -- Dumping structure for table readflow.buku
@@ -30,9 +30,9 @@ CREATE TABLE IF NOT EXISTS `buku` (
   `lokasi` varchar(50) DEFAULT NULL,
   `sampul` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`buku_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table readflow.buku: ~39 rows (approximately)
+-- Dumping data for table readflow.buku: ~32 rows (approximately)
 REPLACE INTO `buku` (`buku_id`, `judul`, `pengarang`, `penerbit`, `tahun`, `kategori`, `lokasi`, `sampul`) VALUES
 	(1, 'Matahari', 'Tere Liye', 'Gramedia Pustaka Utama', 2019, 'Fiksi', NULL, NULL),
 	(2, 'Laskar Pelangi', 'Andrea Hirata', 'Bentang Pustaka', 2005, 'Fiksi', NULL, '2.jpg'),
@@ -54,26 +54,19 @@ REPLACE INTO `buku` (`buku_id`, `judul`, `pengarang`, `penerbit`, `tahun`, `kate
 	(18, 'Bumi', 'Tere Liye', 'Gramedia Pustaka Utama', 2004, 'Fiksi', NULL, NULL),
 	(19, 'Senja di Jakarta', 'Mochtar Lubis', 'Balai Pustaka', 1950, 'Fiksi', NULL, NULL),
 	(20, 'Sitti Nurbaya', 'Marah Rusli', 'Balai Pustaka', 1922, 'Fiksi', NULL, NULL),
-	(21, 'asdas', 'ehdfhdf', NULL, NULL, NULL, NULL, NULL),
-	(22, 'asda', 'asdgggg', NULL, NULL, NULL, NULL, NULL),
-	(23, 'asd', 'asdgsdf', 'sdgsd', 123, 'Item 1', '', NULL),
-	(24, 'aasdas', 'dfgdfg', 'afsdgsdf', 123, 'Item 4', '', NULL),
-	(25, 'aasdas', 'dfgdfg', 'afsdgsdf', 123, 'Item 4', '', NULL),
-	(26, 'aasdas', 'dfgdfg', 'afsdgsdf', 123, 'Item 4', '', NULL),
-	(27, 'asdfassg', 'sdfsdf', 'asdasd', 1234, 'Item 3', '', NULL),
-	(28, 'sdsdf', 'ADASDas', 'asfsdsdg', 12345, 'Item 3', '', NULL),
-	(29, 'dfgdf', 'asdfsdf', 'asdasfg', 2331, 'Item 2', '', NULL),
-	(30, 'sdfsd', 'asdas', 'gfhgf', 2113, 'Item 3', '', NULL),
-	(31, 'asdas', 'dfsgsdf', 'asdasd', 2331, 'Item 1', '', '31.jpg'),
-	(32, 'fasas', 'asdasd', 'sgdg', 2211, 'Item 3', '', NULL),
-	(33, 'asdasad', 'sdfsdfsd', 'asdassad', 1233, 'Item 2', '', NULL),
-	(34, 'assf', 'dfgdfgfd', 'werewr', 2331, 'Item 2', '', NULL),
-	(35, 'dfgd', 'sdfsdf', 'erter', 2341, 'Item 2', '', '35.jpg'),
-	(36, 'adasasd', 'dfgdfgg', 'asdasasasas', 2322, 'Item 3', '', '36.jpg'),
-	(37, 'asdasd', 'sdsdsdf', 'sfqwewe', 2313, 'Item 1', '', '37.jpg'),
-	(38, 'asdasasd', 'sdfgdfdfgdfgfd', 'qqwaqweq', 3213, 'Item 1', '', '38.jpg'),
-	(39, 'asdasasd', 'sdfgdfdfgdfgfd', 'qqwaqweq', 3213, 'Item 1', '', '39.jpg'),
-	(40, 'inijudul', 'pengarang', 'penerbit', 2003, 'Item 2', 'test lokasi', '40.jpg');
+	(41, 'The Lord of the Rings: The Fellowship of the Ring', 'J.R.R. Tolkien', 'Allen & Unwin', 1954, 'Fiksi', 'RAK 1A', '41.jpg'),
+	(42, 'To Kill a Mockingbird', 'Harper Lee', ' J.B. Lippincott & Co', 1960, 'Fiksi', 'RAK 1B', '42.jpg'),
+	(43, 'Doraemon', 'Fujiko F. Fujio', 'Elex Media Komputindo', 1999, 'Fiksi', 'RAK 1C', '43.jpg'),
+	(44, 'Naruto', ' Masashi Kishimoto', 'Elex Media Komputindo', 1999, 'Fiksi', 'RAK 1C', '44.jpg'),
+	(46, 'Crayon Shinchan', 'Yoshito Usui', 'Level Comics', 1990, 'Fiksi', 'RAK 2A', '46.jpg'),
+	(47, 'Dragon Ball', ' Akira Toriyama', 'Elex Media Komputindo', 1984, 'Fiksi', 'RAK 2B', '47.jpg'),
+	(48, 'Detective Conan', 'Gosho Aoyama', ' Elex Media Komputindo', 1994, 'Fiksi', 'RAK 2B', '48.jpg'),
+	(49, 'Wiro Sableng', 'Bastian Tito ', 'Kompas Gramedia', 1978, 'Fiksi', 'RAK 2C', '49.jpg'),
+	(50, 'Attack on Titan', ' Hajime Isayama', ' Kodansha', 2009, 'Fiksi', 'RAK 2C', '50.jpg'),
+	(51, 'My Hero Academia', 'Kohei Horikoshi', 'Shueisha', 2014, 'Fiksi', 'RAK 3A', '51.jpg'),
+	(52, 'One Piece', 'Eiichiro Oda', 'Elex Media Komputindo', 1997, 'Fiksi', 'RAK 2A', '52.jpg'),
+	(53, 'Demon Slayer: Kimetsu no Yaiba', 'Koyoharu Gotouge', 'Shueisha', 2016, 'Fiksi', 'RAK 3A', '53.jpg'),
+	(54, 'Haikyu!!', 'Haruichi Furudate', 'Shueisha', 2012, 'Fiksi', 'RAK 3B', '54.jpg');
 
 -- Dumping structure for table readflow.feedback
 CREATE TABLE IF NOT EXISTS `feedback` (
@@ -82,11 +75,12 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `username` varchar(50) DEFAULT NULL,
   `feedback` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`feedback_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table readflow.feedback: ~0 rows (approximately)
+-- Dumping data for table readflow.feedback: ~2 rows (approximately)
 REPLACE INTO `feedback` (`feedback_id`, `tanggal`, `username`, `feedback`) VALUES
-	(1, '2023-05-26', 'ammar', 'test feedback');
+	(1, '2023-05-26', 'ammar', 'test feedback'),
+	(2, '2023-05-27', 'imam', 'PERPUSTAKAAN INI SANGATLAH BAGUS DAN OP SAYA SANGAT SENANG MEMBACA DAN MEMINJAM DI PERPUSTAKAAN READFLOW INI');
 
 -- Dumping structure for table readflow.member
 CREATE TABLE IF NOT EXISTS `member` (
@@ -97,11 +91,13 @@ CREATE TABLE IF NOT EXISTS `member` (
   `no_telp` varchar(20) DEFAULT NULL,
   `alamat` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`username`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table readflow.member: ~0 rows (approximately)
+-- Dumping data for table readflow.member: ~3 rows (approximately)
 REPLACE INTO `member` (`username`, `nama`, `tgl_lahir`, `email`, `no_telp`, `alamat`) VALUES
-	('ammar', 'test', '2023-05-01', 'asdasasasd', '1232121312123', 'asdasdasdasdasdasdasdas');
+	('afjar', 'Afjar Maulana', '2002-08-15', 'afjar@gmail.com', '087867216721', 'Jalan pisangan'),
+	('ammar', 'test', '2023-05-01', 'asdasasasd', '1232121312123', 'asdasdasdasdasdasdasdas'),
+	('imam', 'Muhammad Imam Wicaksono', '2003-05-27', 'imam@gmail.com', '089765782245', 'Jl Pasar Nangka');
 
 -- Dumping structure for table readflow.pinjam
 CREATE TABLE IF NOT EXISTS `pinjam` (
@@ -113,131 +109,27 @@ CREATE TABLE IF NOT EXISTS `pinjam` (
   `tgl_actual_kembali` date DEFAULT NULL,
   `denda` int(11) DEFAULT NULL,
   PRIMARY KEY (`pinjam_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table readflow.pinjam: ~112 rows (approximately)
+-- Dumping data for table readflow.pinjam: ~9 rows (approximately)
 REPLACE INTO `pinjam` (`pinjam_id`, `tgl_pinjam`, `tgl_kembali`, `username`, `buku_id`, `tgl_actual_kembali`, `denda`) VALUES
 	(1, '2023-05-23', '2023-06-06', 'ammar', 1, NULL, NULL),
 	(2, '2023-05-23', '2023-06-06', 'septi', 5, NULL, NULL),
 	(3, '2023-05-23', '2023-06-06', 'reza', 10, NULL, NULL),
 	(4, '2023-05-23', '2023-05-06', 'marsya', 1, '2023-05-26', 40000),
 	(5, '2023-05-23', '2023-04-06', 'marsya', 12, '2023-05-26', 50000),
-	(6, '2023-05-23', '2023-06-06', 'ammar', 15, NULL, NULL),
-	(7, '2023-05-23', '2023-06-06', 'ammar', 2, NULL, NULL),
-	(8, '2023-05-24', '2023-06-07', 'ammar', 2, NULL, NULL),
-	(9, '2024-05-23', '2024-06-06', 'ammar', 7, '2024-06-12', 12000),
-	(10, '2024-03-29', '2024-04-12', 'ammar', 19, '2024-04-17', 10000),
-	(11, '2023-05-29', '2023-06-12', 'ammar', 4, '2023-06-05', 0),
-	(12, '2023-10-25', '2023-11-08', 'ammar', 12, '2023-11-05', 0),
-	(13, '2023-10-17', '2023-10-31', 'ammar', 9, '2023-10-27', 0),
-	(14, '2023-12-24', '2024-01-07', 'ammar', 12, '2024-01-08', 2000),
-	(15, '2023-12-27', '2024-01-10', 'ammar', 11, '2024-01-07', 0),
-	(16, '2023-10-30', '2023-11-13', 'ammar', 6, '2023-11-15', 4000),
-	(17, '2024-04-16', '2024-04-30', 'ammar', 2, '2024-05-03', 6000),
-	(18, '2023-09-11', '2023-09-25', 'ammar', 13, '2023-09-21', 0),
-	(19, '2023-10-09', '2023-10-23', 'ammar', 20, '2023-10-27', 8000),
-	(20, '2024-01-11', '2024-01-25', 'ammar', 8, '2024-01-21', 0),
-	(21, '2024-02-18', '2024-03-03', 'ammar', 5, '2024-02-27', 0),
-	(22, '2023-06-17', '2023-07-01', 'ammar', 11, '2023-07-02', 2000),
-	(23, '2024-03-11', '2024-03-25', 'ammar', 19, '2024-03-31', 12000),
-	(24, '2024-05-16', '2024-05-30', 'ammar', 10, '2024-06-06', 14000),
-	(25, '2023-12-26', '2024-01-09', 'ammar', 9, '2024-01-11', 4000),
-	(26, '2023-10-27', '2023-11-10', 'ammar', 9, '2023-11-12', 4000),
-	(27, '2023-06-07', '2023-06-21', 'ammar', 14, '2023-06-25', 8000),
-	(28, '2023-06-16', '2023-06-30', 'ammar', 7, '2023-06-28', 0),
-	(29, '2024-04-01', '2024-04-15', 'ammar', 1, '2024-04-14', 0),
-	(30, '2024-05-12', '2024-05-26', 'ammar', 18, '2024-05-28', 4000),
-	(31, '2023-11-04', '2023-11-18', 'ammar', 8, '2023-11-18', 0),
-	(32, '2023-10-01', '2023-10-15', 'ammar', 7, '2023-10-19', 8000),
-	(33, '2023-08-28', '2023-09-11', 'ammar', 6, '2023-09-09', 0),
-	(34, '2024-03-11', '2024-03-25', 'ammar', 4, '2024-03-26', 2000),
-	(35, '2023-08-09', '2023-08-23', 'ammar', 2, '2023-08-24', 2000),
-	(36, '2024-03-26', '2024-04-09', 'ammar', 18, '2024-04-03', 0),
-	(37, '2023-09-24', '2023-10-08', 'ammar', 17, '2023-10-05', 0),
-	(38, '2024-04-11', '2024-04-25', 'ammar', 11, '2024-04-21', 0),
-	(39, '2023-12-31', '2024-01-14', 'ammar', 2, '2024-01-10', 0),
-	(40, '2024-03-10', '2024-03-24', 'ammar', 8, '2024-03-21', 0),
-	(41, '2023-07-16', '2023-07-30', 'ammar', 11, '2023-08-02', 6000),
-	(42, '2023-10-30', '2023-11-13', 'ammar', 12, '2023-11-17', 8000),
-	(43, '2023-10-26', '2023-11-09', 'ammar', 19, '2023-11-11', 4000),
-	(44, '2023-12-11', '2023-12-25', 'ammar', 18, '2023-12-21', 0),
-	(45, '2023-09-22', '2023-10-06', 'ammar', 10, '2023-10-11', 10000),
-	(46, '2024-01-04', '2024-01-18', 'ammar', 2, '2024-01-21', 6000),
-	(47, '2023-08-27', '2023-09-10', 'ammar', 3, '2023-09-12', 4000),
-	(48, '2023-10-10', '2023-10-24', 'ammar', 17, '2023-10-19', 0),
-	(49, '2023-06-26', '2023-07-10', 'ammar', 6, '2023-07-12', 4000),
-	(50, '2023-07-22', '2023-08-05', 'ammar', 18, '2023-08-04', 0),
-	(51, '2024-01-31', '2024-02-14', 'ammar', 10, '2024-02-14', 0),
-	(52, '2023-06-28', '2023-07-12', 'ammar', 7, '2023-07-15', 6000),
-	(53, '2023-08-26', '2023-09-09', 'ammar', 1, '2023-09-15', 12000),
-	(54, '2024-02-04', '2024-02-18', 'ammar', 16, '2024-02-22', 8000),
-	(55, '2023-09-26', '2023-10-10', 'ammar', 15, '2023-10-14', 8000),
-	(56, '2023-06-13', '2023-06-27', 'ammar', 4, '2023-07-03', 12000),
-	(57, '2023-12-24', '2024-01-07', 'ammar', 19, '2024-01-13', 12000),
-	(58, '2024-01-25', '2024-02-08', 'ammar', 18, '2024-02-04', 0),
-	(59, '2023-07-16', '2023-07-30', 'ammar', 14, '2023-07-27', 0),
-	(60, '2024-05-08', '2024-05-22', 'ammar', 15, '2024-05-22', 0),
-	(61, '2023-06-18', '2023-07-02', 'ammar', 5, '2023-07-04', 4000),
-	(62, '2023-12-10', '2023-12-24', 'ammar', 9, '2023-12-19', 0),
-	(63, '2024-02-29', '2024-03-14', 'ammar', 12, '2024-03-20', 12000),
-	(64, '2023-12-19', '2024-01-02', 'ammar', 1, '2024-01-03', 2000),
-	(65, '2024-05-20', '2024-06-03', 'ammar', 10, '2024-06-09', 12000),
-	(66, '2023-12-24', '2024-01-07', 'ammar', 20, '2024-01-07', 0),
-	(67, '2023-08-01', '2023-08-15', 'ammar', 18, '2023-08-19', 8000),
-	(68, '2024-04-06', '2024-04-20', 'ammar', 10, '2024-04-19', 0),
-	(69, '2023-06-19', '2023-07-03', 'ammar', 14, '2023-07-03', 0),
-	(70, '2023-08-13', '2023-08-27', 'ammar', 12, '2023-08-31', 8000),
-	(71, '2023-08-10', '2023-08-24', 'ammar', 2, '2023-08-24', 0),
-	(72, '2024-02-04', '2024-02-18', 'ammar', 11, '2024-02-23', 10000),
-	(73, '2023-08-01', '2023-08-15', 'ammar', 6, '2023-08-16', 2000),
-	(74, '2023-09-24', '2023-10-08', 'ammar', 1, '2023-10-08', 0),
-	(75, '2023-08-10', '2023-08-24', 'ammar', 18, '2023-08-21', 0),
-	(76, '2024-05-01', '2024-05-15', 'ammar', 4, '2024-05-14', 0),
-	(77, '2023-09-07', '2023-09-21', 'ammar', 10, '2023-09-15', 0),
-	(78, '2023-09-12', '2023-09-26', 'ammar', 15, '2023-10-03', 14000),
-	(79, '2023-12-18', '2024-01-01', 'ammar', 18, '2024-01-06', 10000),
-	(80, '2023-08-25', '2023-09-08', 'ammar', 16, '2023-09-04', 0),
-	(81, '2023-11-28', '2023-12-12', 'ammar', 14, '2023-12-17', 10000),
-	(82, '2023-11-04', '2023-11-18', 'ammar', 16, '2023-11-25', 14000),
-	(83, '2024-02-15', '2024-02-29', 'ammar', 17, '2024-03-01', 2000),
-	(84, '2024-01-07', '2024-01-21', 'ammar', 6, '2024-01-26', 10000),
-	(85, '2024-01-04', '2024-01-18', 'ammar', 4, '2024-01-20', 4000),
-	(86, '2024-03-16', '2024-03-30', 'ammar', 16, '2024-03-23', 0),
-	(87, '2024-01-27', '2024-02-10', 'ammar', 1, '2024-02-16', 12000),
-	(88, '2024-01-05', '2024-01-19', 'ammar', 17, '2024-01-16', 0),
-	(89, '2024-04-22', '2024-05-06', 'ammar', 16, '2024-05-07', 2000),
-	(90, '2023-11-20', '2023-12-04', 'ammar', 8, '2023-12-04', 0),
-	(91, '2023-12-12', '2023-12-26', 'ammar', 1, '2023-12-26', 0),
-	(92, '2023-05-31', '2023-06-14', 'ammar', 1, '2023-06-15', 2000),
-	(93, '2023-09-16', '2023-09-30', 'ammar', 9, '2023-10-04', 8000),
-	(94, '2023-12-17', '2023-12-31', 'ammar', 3, '2024-01-02', 4000),
-	(95, '2024-04-06', '2024-04-20', 'ammar', 12, '2024-04-23', 6000),
-	(96, '2023-08-24', '2023-09-07', 'ammar', 3, '2023-09-04', 0),
-	(97, '2023-12-07', '2023-12-21', 'ammar', 4, '2023-12-21', 0),
-	(98, '2023-11-30', '2023-12-14', 'ammar', 4, '2023-12-07', 0),
-	(99, '2023-12-23', '2024-01-06', 'ammar', 1, '2024-01-09', 6000),
-	(100, '2023-10-13', '2023-10-27', 'ammar', 13, '2023-10-27', 0),
-	(101, '2024-02-21', '2024-03-06', 'ammar', 2, '2024-03-01', 0),
-	(102, '2024-05-16', '2024-05-30', 'ammar', 19, '2024-06-01', 4000),
-	(103, '2024-05-03', '2024-05-17', 'ammar', 5, '2024-05-22', 10000),
-	(104, '2024-03-30', '2024-04-13', 'ammar', 13, '2024-04-19', 12000),
-	(105, '2024-01-01', '2024-01-15', 'ammar', 2, '2024-01-21', 12000),
-	(106, '2024-03-16', '2024-03-30', 'ammar', 10, '2024-04-02', 6000),
-	(107, '2024-01-05', '2024-01-19', 'ammar', 8, '2024-01-16', 0),
-	(108, '2023-07-30', '2023-08-13', 'ammar', 5, '2023-08-17', 8000),
-	(109, '2023-06-20', '2023-07-04', 'ammar', 3, '2023-06-30', 0),
-	(110, '2023-11-03', '2023-11-17', 'ammar', 7, '2023-11-11', 0),
-	(111, '2023-06-29', '2023-07-13', 'ammar', 18, '2023-07-20', 14000),
-	(112, '2023-05-26', '2023-06-09', 'marsya', 1, NULL, NULL),
-	(113, '2023-05-26', '2023-06-09', 'marsya', 2, NULL, NULL),
-	(114, '2023-05-26', '2023-06-09', 'marsya', 3, NULL, NULL),
-	(115, '2023-05-26', '2023-06-09', 'marsya', 4, NULL, NULL);
+	(6, '2023-07-30', '2023-08-13', 'ammar', 5, '2023-08-17', 8000),
+	(7, '2023-06-20', '2023-07-04', 'ammar', 3, '2023-06-30', 0),
+	(8, '2023-11-03', '2023-11-17', 'ammar', 7, '2023-11-11', 0),
+	(9, '2023-05-26', '2023-06-09', 'marsya', 1, NULL, NULL),
+	(116, '2023-05-27', '2023-06-10', 'imam', 41, NULL, NULL),
+	(117, '2023-05-27', '2023-06-10', 'imam', 1, NULL, NULL);
 
 -- Dumping structure for table readflow.setting
 CREATE TABLE IF NOT EXISTS `setting` (
   `nama_param` varchar(50) DEFAULT NULL,
   `nilai_param` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table readflow.setting: ~5 rows (approximately)
 REPLACE INTO `setting` (`nama_param`, `nilai_param`) VALUES
@@ -253,11 +145,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` char(32) DEFAULT NULL,
   `role` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table readflow.user: ~5 rows (approximately)
+-- Dumping data for table readflow.user: ~7 rows (approximately)
 REPLACE INTO `user` (`username`, `password`, `role`) VALUES
+	('afjar', '25d55ad283aa400af464c76d713c07ad', 'Pegawai'),
 	('ammar', '4124bc0a9335c27f086f24ba207a4912', 'Admin'),
+	('imam', '25d55ad283aa400af464c76d713c07ad', 'User'),
 	('marsya', '12345678', NULL),
 	('reza', '12345678', 'Pegawai'),
 	('septi', '12345678', NULL),
