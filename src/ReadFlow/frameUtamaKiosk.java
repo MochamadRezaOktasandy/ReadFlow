@@ -13,104 +13,90 @@ public class frameUtamaKiosk extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        bCariBuku = new javax.swing.JButton();
+        bRegistrasi = new javax.swing.JButton();
+        bFeedback = new javax.swing.JButton();
+        lblFotoBuku = new javax.swing.JLabel();
+        lblWelcomeToKiosk = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Utama");
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Cari Buku");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bCariBuku.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 14)); // NOI18N
+        bCariBuku.setText("Cari Buku");
+        bCariBuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bCariBukuActionPerformed(evt);
             }
         });
+        jPanel1.add(bCariBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 120, 30));
+        bCariBuku.getAccessibleContext().setAccessibleParent(jPanel1);
 
-        jButton2.setText("Registrasi");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bRegistrasi.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 14)); // NOI18N
+        bRegistrasi.setText("Registrasi");
+        bRegistrasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bRegistrasiActionPerformed(evt);
             }
         });
+        jPanel1.add(bRegistrasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, 120, 30));
+        bRegistrasi.getAccessibleContext().setAccessibleParent(jPanel1);
 
-        jButton3.setText("Feedback");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        bFeedback.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 14)); // NOI18N
+        bFeedback.setText("Feedback");
+        bFeedback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                bFeedbackActionPerformed(evt);
             }
         });
+        jPanel1.add(bFeedback, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 120, 30));
+        bFeedback.getAccessibleContext().setAccessibleParent(jPanel1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jButton1)
-                .addGap(28, 28, 28)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addContainerGap(99, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
+        lblFotoBuku.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/Foto Buku.png"))); // NOI18N
+        jPanel1.add(lblFotoBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 283, 320));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 200, Short.MAX_VALUE))
-        );
+        lblWelcomeToKiosk.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        lblWelcomeToKiosk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/Proyek Baru (1).png"))); // NOI18N
+        jPanel1.add(lblWelcomeToKiosk, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 270, 50));
+
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/Proyek Baru.png"))); // NOI18N
+        jPanel1.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 280, 240, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void bFeedbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFeedbackActionPerformed
+        frameFeedBack feedback = new frameFeedBack();
+        feedback.setVisible(true);
+    }//GEN-LAST:event_bFeedbackActionPerformed
+
+    private void bRegistrasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRegistrasiActionPerformed
         frameRegistrasi registrasi = new frameRegistrasi();
         registrasi.cbRole.setSelectedIndex(2);
         registrasi.cbRole.setEnabled(false);
         registrasi.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_bRegistrasiActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        frameFeedBack feedback = new frameFeedBack();
-        feedback.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bCariBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCariBukuActionPerformed
         frameCariBuku cariBuku = new frameCariBuku();
         cariBuku.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bCariBukuActionPerformed
 
     
     public static void main(String args[]) {
@@ -149,10 +135,12 @@ public class frameUtamaKiosk extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton bCariBuku;
+    private javax.swing.JButton bFeedback;
+    private javax.swing.JButton bRegistrasi;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblFotoBuku;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblWelcomeToKiosk;
     // End of variables declaration//GEN-END:variables
 }

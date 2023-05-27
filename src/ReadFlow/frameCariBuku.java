@@ -42,6 +42,8 @@ public class frameCariBuku extends frameMaster {
         txtPilihBuku = new javax.swing.JTextField();
         bClose = new javax.swing.JButton();
         lblSampul = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -51,20 +53,28 @@ public class frameCariBuku extends frameMaster {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         lblPilihBuku.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
         lblPilihBuku.setText("Pilih Buku (DOUBLE CLICK)");
+        jPanel1.add(lblPilihBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 60, -1, -1));
+        jPanel1.add(txtLokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 142, 228, -1));
 
         lblJudulPeminjaman.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
         lblJudulPeminjaman.setText("KIOSK - Cari Buku");
+        jPanel1.add(lblJudulPeminjaman, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 21, -1, -1));
 
         lblLokasi.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
         lblLokasi.setText("Lokasi Buku");
+        jPanel1.add(lblLokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 115, -1, -1));
 
         txtPilihBuku.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtPilihBukuMouseClicked(evt);
             }
         });
+        jPanel1.add(txtPilihBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 81, 228, -1));
 
         bClose.setText("CLOSE");
         bClose.addActionListener(new java.awt.event.ActionListener() {
@@ -72,60 +82,29 @@ public class frameCariBuku extends frameMaster {
                 bCloseActionPerformed(evt);
             }
         });
+        jPanel1.add(bClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 320, 228, 40));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bClose, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblLokasi)
-                        .addComponent(lblPilihBuku)
-                        .addComponent(txtPilihBuku)
-                        .addComponent(txtLokasi, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(lblJudulPeminjaman))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(lblSampul, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblJudulPeminjaman)
-                .addGap(18, 18, 18)
-                .addComponent(lblPilihBuku)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPilihBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblLokasi)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblSampul, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-        );
+        lblSampul.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel1.add(lblSampul, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 242, 300));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/buku.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 150, 190));
+
+        jLabel2.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        jLabel2.setText("Sampul Buku");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -214,6 +193,8 @@ public class frameCariBuku extends frameMaster {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bClose;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblJudulPeminjaman;
     private javax.swing.JLabel lblLokasi;

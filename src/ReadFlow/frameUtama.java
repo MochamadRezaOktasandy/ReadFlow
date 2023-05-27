@@ -16,6 +16,7 @@ public class frameUtama extends frameMaster {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         menuPeminjamanBuku = new javax.swing.JMenuItem();
@@ -28,6 +29,7 @@ public class frameUtama extends frameMaster {
         menuRegistrasi = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Utama");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -35,16 +37,11 @@ public class frameUtama extends frameMaster {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 288, Short.MAX_VALUE)
-        );
+        jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/First ReadFlow.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 260, 270));
 
         jMenu2.setText("Pegawai");
 
@@ -116,11 +113,11 @@ public class frameUtama extends frameMaster {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
         );
 
         pack();
@@ -151,12 +148,12 @@ public class frameUtama extends frameMaster {
     private void menuPengembalianBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPengembalianBukuActionPerformed
         // TODO add your handling code here:
         framePinjamBuku kembalikanBuku = new framePinjamBuku();
-        kembalikanBuku.setVisible(true);
         kembalikanBuku.txtBukuYangDipinjam.setVisible(false);
         kembalikanBuku.bListTambah.setVisible(false);
         kembalikanBuku.bHitungBuku.setVisible(false);
         kembalikanBuku.bPinjam.setVisible(false);
         kembalikanBuku.jLabel4.setText("Form Pengembalian Buku");
+        kembalikanBuku.setVisible(true);
     }//GEN-LAST:event_menuPengembalianBukuActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -256,6 +253,7 @@ public class frameUtama extends frameMaster {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

@@ -17,6 +17,7 @@ public class frameRegistrasi extends frameMaster {
     public String noTelp = "";
     public String tanggal = "";
     public String alamat = "";
+    public String email = "";
     public String role = "";
     public String password = "";
     public String conPassword = "";
@@ -52,23 +53,33 @@ public class frameRegistrasi extends frameMaster {
         lblRole = new javax.swing.JLabel();
         cbRole = new javax.swing.JComboBox<>();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        lblEmail = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblJudul1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
-        lblJudul1.setText("LIBRARY SOZ");
+        lblJudul1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/Proyek Baru.png"))); // NOI18N
+        jPanel1.add(lblJudul1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 270, 100));
 
         lblUsername.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblUsername.setText("Username");
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 72, -1));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 293, 27));
 
         lblNamaLengkap.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblNamaLengkap.setText("Nama Lengkap");
+        jPanel1.add(lblNamaLengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jPanel1.add(txtNamaLengkap, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 293, 29));
 
         lblPassword.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblPassword.setText("Password");
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 630, 27));
 
         cbShowPassword.setText("Show Password");
         cbShowPassword.addActionListener(new java.awt.event.ActionListener() {
@@ -76,9 +87,12 @@ public class frameRegistrasi extends frameMaster {
                 cbShowPasswordActionPerformed(evt);
             }
         });
+        jPanel1.add(cbShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         jLabel1.setText("Confirm Password");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+        jPanel1.add(txtConfirmPassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 630, 27));
 
         cbCFShowPassword1.setText("Show Password");
         cbCFShowPassword1.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +100,7 @@ public class frameRegistrasi extends frameMaster {
                 cbCFShowPassword1ActionPerformed(evt);
             }
         });
+        jPanel1.add(cbCFShowPassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, -1, -1));
 
         bRegister.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 18)); // NOI18N
         bRegister.setText("Register");
@@ -94,6 +109,7 @@ public class frameRegistrasi extends frameMaster {
                 bRegisterActionPerformed(evt);
             }
         });
+        jPanel1.add(bRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 530, 263, 40));
 
         lblLogin.setFont(new java.awt.Font("SimSun-ExtB", 0, 12)); // NOI18N
         lblLogin.setText("you already have an account? Login now!");
@@ -102,18 +118,25 @@ public class frameRegistrasi extends frameMaster {
                 lblLoginMouseClicked(evt);
             }
         });
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, -1, -1));
 
         lblNoTelp.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblNoTelp.setText("Nomor Telepon");
+        jPanel1.add(lblNoTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, -1, -1));
+        jPanel1.add(txtNoTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 293, 27));
 
         lblTanggal.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblTanggal.setText("Tanggal Lahir");
+        jPanel1.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         lblAlamat.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblAlamat.setText("Alamat");
+        jPanel1.add(lblAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
+        jPanel1.add(txtAlamat, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 292, 28));
 
         lblRole.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblRole.setText("Role");
+        jPanel1.add(lblRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
 
         cbRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Pegawai", "User" }));
         cbRole.addActionListener(new java.awt.event.ActionListener() {
@@ -121,113 +144,23 @@ public class frameRegistrasi extends frameMaster {
                 cbRoleActionPerformed(evt);
             }
         });
+        jPanel1.add(cbRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 293, 28));
+        jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 293, 31));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(bRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(lblLogin)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(51, 51, 51)
-                            .addComponent(lblJudul1))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(21, 21, 21)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblTanggal)
-                                .addComponent(lblNoTelp)
-                                .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblNamaLengkap)
-                                .addComponent(txtNamaLengkap, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblAlamat)
-                        .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblPassword)
-                        .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
-                        .addComponent(cbShowPassword)
-                        .addComponent(jLabel1)
-                        .addComponent(txtConfirmPassword1)
-                        .addComponent(cbCFShowPassword1)
-                        .addComponent(lblRole))
-                    .addComponent(cbRole, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblJudul1)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblNamaLengkap)
-                        .addGap(1, 1, 1)
-                        .addComponent(txtNamaLengkap, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblNoTelp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTanggal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblAlamat)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtAlamat, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPassword)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbShowPassword)
-                        .addGap(30, 30, 30)
-                        .addComponent(txtConfirmPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cbCFShowPassword1)
-                        .addGap(8, 8, 8)
-                        .addComponent(lblRole)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbRole, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(90, 90, 90)
-                .addComponent(bRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblLogin)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        lblEmail.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        lblEmail.setText("Email");
+        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 290, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
         );
 
         pack();
@@ -252,6 +185,8 @@ public class frameRegistrasi extends frameMaster {
         nama = txtNamaLengkap.getText();
         noTelp = txtNoTelp.getText();
         alamat = txtAlamat.getText();
+        email = txtEmail.getText();
+        
         password = new String(txtPassword.getPassword());
         conPassword =  new String(txtConfirmPassword1.getPassword());
         role = cbRole.getSelectedItem().toString();
@@ -285,14 +220,13 @@ public class frameRegistrasi extends frameMaster {
                 String insertUserSql = "INSERT INTO user(username, password, role) VALUES('" + username + "', '" + hashPassword(password) + "', '" + role + "')";
                 boolean userSuccess = db.Execute(insertUserSql);
 
-                String insertMemberSql = "INSERT INTO member(username, nama, tgl_lahir, no_telp, alamat) VALUES('" + username + "', '" + nama + "', '" + tanggal + "' , '" + noTelp + "' , '" + alamat + "')";
+                String insertMemberSql = "INSERT INTO member(username, nama, tgl_lahir, email, no_telp, alamat) VALUES('" + username + "', '" + nama + "', '" + tanggal + "' , '" + email + "' , '" + noTelp + "' , '" + alamat + "')";
                 boolean memberSuccess = db.Execute(insertMemberSql);
 
                 if (userSuccess && memberSuccess) 
                 {
                     JOptionPane.showMessageDialog(this, "Register Berhasil!", "Message", JOptionPane.INFORMATION_MESSAGE);
-                    frameLogin login = new frameLogin();
-                    login.main(null);
+                    
                     this.dispose();
                 } 
                 else 
@@ -411,6 +345,7 @@ public class frameRegistrasi extends frameMaster {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAlamat;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblJudul1;
     private javax.swing.JLabel lblLogin;
     private javax.swing.JLabel lblNamaLengkap;
@@ -421,6 +356,7 @@ public class frameRegistrasi extends frameMaster {
     private javax.swing.JLabel lblUsername;
     private javax.swing.JTextField txtAlamat;
     private javax.swing.JPasswordField txtConfirmPassword1;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNamaLengkap;
     private javax.swing.JTextField txtNoTelp;
     private javax.swing.JPasswordField txtPassword;

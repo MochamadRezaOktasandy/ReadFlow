@@ -26,7 +26,6 @@ public class frameLogin extends JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblJudul1 = new javax.swing.JLabel();
         lblUsername = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
         lblPassword = new javax.swing.JLabel();
@@ -34,26 +33,29 @@ public class frameLogin extends JDialog {
         cbShowPassword = new javax.swing.JCheckBox();
         bLogin = new javax.swing.JButton();
         lblRegister = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 102));
-
-        lblJudul1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
-        lblJudul1.setText("LIBRARY SOZ");
+        jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsername.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblUsername.setText("Username");
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 72, -1));
 
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
             }
         });
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 266, 27));
 
         lblPassword.setFont(new java.awt.Font("SimSun", 0, 15)); // NOI18N
         lblPassword.setText("Password");
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 266, 27));
 
         cbShowPassword.setText("Show Password");
         cbShowPassword.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +63,7 @@ public class frameLogin extends JDialog {
                 cbShowPasswordActionPerformed(evt);
             }
         });
+        jPanel1.add(cbShowPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
         bLogin.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 18)); // NOI18N
         bLogin.setText("LOGIN");
@@ -69,6 +72,7 @@ public class frameLogin extends JDialog {
                 bLoginActionPerformed(evt);
             }
         });
+        jPanel1.add(bLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 266, 40));
 
         lblRegister.setFont(new java.awt.Font("SimSun-ExtB", 0, 12)); // NOI18N
         lblRegister.setText("don't have an account? register now!");
@@ -77,67 +81,20 @@ public class frameLogin extends JDialog {
                 lblRegisterMouseClicked(evt);
             }
         });
+        jPanel1.add(lblRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, 10));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(lblJudul1)
-                .addGap(94, 94, 94)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblPassword)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cbShowPassword)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(bLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(66, 66, 66))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblRegister)
-                .addGap(84, 84, 84))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblJudul1)
-                    .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(lblPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbShowPassword)
-                .addGap(34, 34, 34)
-                .addComponent(bLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblRegister)
-                .addContainerGap(125, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/Proyek Baru.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 240, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
         );
 
         pack();
@@ -261,8 +218,8 @@ public class frameLogin extends JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bLogin;
     private javax.swing.JCheckBox cbShowPassword;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblJudul1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblRegister;
     private javax.swing.JLabel lblUsername;

@@ -21,14 +21,16 @@ public class frameFeedBack extends frameMaster {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblFeedBack = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblNamaUser = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblFeedBack = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         bFeedBack = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtFeedBack = new javax.swing.JTextArea();
-        lblNamaUser = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -38,79 +40,56 @@ public class frameFeedBack extends frameMaster {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblNamaUser.setText("NAMA");
+        jPanel1.add(lblNamaUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 280, 20));
+
+        jLabel2.setFont(new java.awt.Font("SimSun", 0, 12)); // NOI18N
+        jLabel2.setText("Masukan pendapat dan masukan anda dibawah sini!");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 289, -1));
+
         lblFeedBack.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         lblFeedBack.setText("FeedBack");
-
-        jLabel1.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
-        jLabel1.setText(" Kami sangat menghargai pendapat dan masukan Anda tentang apa pun yang ingin Anda bagikan. ");
-
-        jLabel2.setText("Masukan pendapat dan masukan anda dibawah sini!");
+        jPanel1.add(lblFeedBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 202, 49));
 
         jLabel3.setFont(new java.awt.Font("SimSun", 0, 12)); // NOI18N
         jLabel3.setText("Setiap feedback Anda sangat berharga bagi kami. Terima kasih banyak");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
+        bFeedBack.setFont(new java.awt.Font("SimSun", 0, 18)); // NOI18N
         bFeedBack.setText("Send");
         bFeedBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bFeedBackActionPerformed(evt);
             }
         });
+        jPanel1.add(bFeedBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(494, 335, 136, 35));
 
         txtFeedBack.setColumns(20);
         txtFeedBack.setRows(5);
         jScrollPane1.setViewportView(txtFeedBack);
 
-        lblNamaUser.setText("jLabel4");
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 115, 656, 177));
+
+        jLabel1.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        jLabel1.setText(" Kami sangat menghargai pendapat dan masukan Anda tentang apa pun yang ingin Anda bagikan. ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 26));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/RF2.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 100, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(lblFeedBack, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblNamaUser)
-                .addGap(151, 151, 151))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(bFeedBack, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1))
-                            .addGap(26, 26, 26))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3))
-                            .addGap(253, 253, 253)))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblFeedBack, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblNamaUser)))
-                .addGap(7, 7, 7)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bFeedBack, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE)
         );
 
         pack();
@@ -151,7 +130,7 @@ public class frameFeedBack extends frameMaster {
             if(db.loggedInNamaUser.length() != 0)
             {
                 JOptionPane.showMessageDialog(this, "Selamat Datang " + db.loggedInNamaUser);
-                lblNamaUser.setText(db.loggedInNamaUser);
+                lblNamaUser.setText("Halo, "+ db.loggedInNamaUser);
                 lblNamaUser.setVisible(true);
             }
             else
@@ -201,6 +180,8 @@ public class frameFeedBack extends frameMaster {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblFeedBack;
     private javax.swing.JLabel lblNamaUser;

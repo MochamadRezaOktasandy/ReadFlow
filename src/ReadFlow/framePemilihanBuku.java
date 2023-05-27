@@ -36,8 +36,13 @@ public class framePemilihanBuku extends JDialog {
         tblBuku = new javax.swing.JTable();
         bPilih = new javax.swing.JButton();
         bCancel = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtCariBuku.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -47,11 +52,15 @@ public class framePemilihanBuku extends JDialog {
                 txtCariBukuKeyTyped(evt);
             }
         });
+        jPanel1.add(txtCariBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 63, 159, -1));
 
-        lblJudul.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
+        lblJudul.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         lblJudul.setText("Pemilihan Buku");
+        jPanel1.add(lblJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 6, -1, -1));
 
+        lblCariBuku.setFont(new java.awt.Font("SimSun", 0, 12)); // NOI18N
         lblCariBuku.setText("Cari Buku");
+        jPanel1.add(lblCariBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 66, -1, -1));
 
         tblBuku.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,78 +102,47 @@ public class framePemilihanBuku extends JDialog {
             tblBuku.getColumnModel().getColumn(0).setPreferredWidth(0);
         }
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblJudul)
-                        .addGap(232, 232, 232))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblCariBuku)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCariBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblJudul)
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCariBuku, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCariBuku))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 592, 210));
 
+        bPilih.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         bPilih.setText("PILIH");
         bPilih.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bPilihActionPerformed(evt);
             }
         });
+        jPanel1.add(bPilih, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
 
+        bCancel.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         bCancel.setText("CANCEL");
         bCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bCancelActionPerformed(evt);
             }
         });
+        jPanel1.add(bCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/buku.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 140, 120));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/Proyek Baru.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 230, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(bPilih)
-                .addGap(36, 36, 36)
-                .addComponent(bCancel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bPilih)
-                    .addComponent(bCancel))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCariBukuKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCariBukuKeyPressed
@@ -261,6 +239,8 @@ public class framePemilihanBuku extends JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCancel;
     private javax.swing.JButton bPilih;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCariBuku;

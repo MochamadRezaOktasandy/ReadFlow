@@ -64,6 +64,7 @@ public class framePendaftaranBuku extends frameMaster {
         jButton1 = new javax.swing.JButton();
         bEdit = new javax.swing.JButton();
         bDelete = new javax.swing.JButton();
+        lblBuku = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -73,167 +74,106 @@ public class framePendaftaranBuku extends frameMaster {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
         jLabel1.setText("Pendaftaran Buku");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 215, 60));
 
         lblJudul.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
         lblJudul.setText("Judul");
+        jPanel1.add(lblJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 95, 37, -1));
+        jPanel1.add(txtJudul, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 116, 201, -1));
 
         lblPengarang.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
         lblPengarang.setText("pengarang");
+        jPanel1.add(lblPengarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 150, -1, -1));
+        jPanel1.add(txtPengarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 171, 201, -1));
 
         lblPenerbit.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
         lblPenerbit.setText("Penerbit");
+        jPanel1.add(lblPenerbit, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 205, -1, -1));
+        jPanel1.add(txtPenerbit, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 226, 201, -1));
 
         lblTahun.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
         lblTahun.setText("Tahun");
+        jPanel1.add(lblTahun, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 254, -1, -1));
+        jPanel1.add(txtTahun, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 275, 201, -1));
 
         lblKategori.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
         lblKategori.setText("Kategori");
+        jPanel1.add(lblKategori, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 309, -1, -1));
 
         lblLokasi.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
         lblLokasi.setText("Lokasi");
+        jPanel1.add(lblLokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 358, -1, -1));
+        jPanel1.add(txtLokasi, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 379, 201, -1));
 
         lblSampul.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
+        lblSampul.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(lblSampul, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 280, 374));
 
-        bDaftarBuku.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 13)); // NOI18N
+        bDaftarBuku.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 13)); // NOI18N
         bDaftarBuku.setText("Daftar");
         bDaftarBuku.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDaftarBukuActionPerformed(evt);
             }
         });
+        jPanel1.add(bDaftarBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 90, 33));
 
         cbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(cbKategori, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 330, 201, -1));
 
+        bUpload.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         bUpload.setText("UPLOAD");
         bUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bUploadActionPerformed(evt);
             }
         });
+        jPanel1.add(bUpload, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 90, 30));
 
+        jButton1.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         jButton1.setText("CLOSE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 670, 90, 40));
 
+        bEdit.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         bEdit.setText("EDIT");
         bEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bEditActionPerformed(evt);
             }
         });
+        jPanel1.add(bEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 90, 30));
 
+        bDelete.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         bDelete.setText("DELETE");
         bDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bDeleteActionPerformed(evt);
             }
         });
+        jPanel1.add(bDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 90, 30));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(206, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(230, 230, 230))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblKategori)
-                    .addComponent(lblLokasi)
-                    .addComponent(txtTahun, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                    .addComponent(lblTahun)
-                    .addComponent(txtPenerbit)
-                    .addComponent(lblPenerbit)
-                    .addComponent(txtPengarang)
-                    .addComponent(txtJudul)
-                    .addComponent(lblJudul, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPengarang)
-                    .addComponent(txtLokasi)
-                    .addComponent(cbKategori, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bUpload)
-                            .addComponent(lblSampul, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(68, 68, 68))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(81, 81, 81))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(bDaftarBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(bEdit)
-                .addGap(18, 18, 18)
-                .addComponent(bDelete)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblJudul)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblSampul, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addComponent(bUpload)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtJudul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblPengarang)
-                        .addGap(94, 94, 94)
-                        .addComponent(txtPengarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(80, 80, 80)
-                        .addComponent(lblPenerbit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPenerbit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblTahun)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblKategori)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbKategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblLokasi)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bDaftarBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bEdit)
-                            .addComponent(bDelete))
-                        .addGap(81, 81, 81))))
-        );
+        lblBuku.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/buku.png"))); // NOI18N
+        jPanel1.add(lblBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 140, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
         );
 
         pack();
@@ -509,6 +449,7 @@ public class framePendaftaranBuku extends frameMaster {
     private javax.swing.JButton jButton1;
     public javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblBuku;
     private javax.swing.JLabel lblJudul;
     private javax.swing.JLabel lblKategori;
     private javax.swing.JLabel lblLokasi;
