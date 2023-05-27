@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `buku` (
   PRIMARY KEY (`buku_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table readflow.buku: ~32 rows (approximately)
+-- Dumping data for table readflow.buku: ~33 rows (approximately)
 REPLACE INTO `buku` (`buku_id`, `judul`, `pengarang`, `penerbit`, `tahun`, `kategori`, `lokasi`, `sampul`) VALUES
 	(1, 'Matahari', 'Tere Liye', 'Gramedia Pustaka Utama', 2019, 'Fiksi', NULL, NULL),
 	(2, 'Laskar Pelangi', 'Andrea Hirata', 'Bentang Pustaka', 2005, 'Fiksi', NULL, '2.jpg'),
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `pinjam` (
   PRIMARY KEY (`pinjam_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table readflow.pinjam: ~9 rows (approximately)
+-- Dumping data for table readflow.pinjam: ~11 rows (approximately)
 REPLACE INTO `pinjam` (`pinjam_id`, `tgl_pinjam`, `tgl_kembali`, `username`, `buku_id`, `tgl_actual_kembali`, `denda`) VALUES
 	(1, '2023-05-23', '2023-06-06', 'ammar', 1, NULL, NULL),
 	(2, '2023-05-23', '2023-06-06', 'septi', 5, NULL, NULL),
