@@ -23,7 +23,7 @@ public class  DB {
         try 
         {
             Class.forName("com.mysql.jdbc.Driver");
-            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/libsoz", "root", "");
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/readflow", "root", "");
             return true;
         } 
         catch (Exception e) 
