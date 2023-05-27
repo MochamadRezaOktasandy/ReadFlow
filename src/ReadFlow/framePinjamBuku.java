@@ -44,8 +44,9 @@ public class framePinjamBuku extends frameMaster {
         txtBukuYangDipinjam = new javax.swing.JTextField();
         bHitungBuku = new javax.swing.JButton();
         bListKembalikan = new javax.swing.JButton();
+        lblTotalDenda = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -85,6 +86,11 @@ public class framePinjamBuku extends frameMaster {
         });
 
         bClose.setText("CLOSE");
+        bClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCloseActionPerformed(evt);
+            }
+        });
 
         bKembalikan.setText("KEMBALIKAN");
         bKembalikan.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +112,8 @@ public class framePinjamBuku extends frameMaster {
                 bListKembalikanActionPerformed(evt);
             }
         });
+
+        lblTotalDenda.setText("Total Denda");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,6 +157,10 @@ public class framePinjamBuku extends frameMaster {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bHitungBuku)
                         .addGap(26, 26, 26))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTotalDenda)
+                .addGap(190, 190, 190))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +188,9 @@ public class framePinjamBuku extends frameMaster {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addGap(25, 25, 25)
+                        .addComponent(lblTotalDenda)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(bPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bKembalikan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -447,6 +461,11 @@ public class framePinjamBuku extends frameMaster {
         
     }//GEN-LAST:event_bListKembalikanActionPerformed
 
+    private void bCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCloseActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_bCloseActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -490,6 +509,7 @@ public class framePinjamBuku extends frameMaster {
     public javax.swing.JButton bPinjam;
     public javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel lblTotalDenda;
     private javax.swing.JTable tblBuku;
     private javax.swing.JTextField txtBukuID;
     public javax.swing.JTextField txtBukuYangDipinjam;

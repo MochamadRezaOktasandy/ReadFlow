@@ -24,7 +24,9 @@ import java.io.IOException;
 public class framePendaftaranBuku extends frameMaster {
     
     private String nama_file = "";
-            
+       
+    
+    public String bukuID = ""; //BUKUID DIPAKAI UNTUK UPDATE.
     public String judul = "";
     public String pengarang = "";
     public String penerbit = "";
@@ -60,8 +62,10 @@ public class framePendaftaranBuku extends frameMaster {
         cbKategori = new javax.swing.JComboBox<>();
         bUpload = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        bEdit = new javax.swing.JButton();
+        bDelete = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -110,6 +114,25 @@ public class framePendaftaranBuku extends frameMaster {
         });
 
         jButton1.setText("CLOSE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        bEdit.setText("EDIT");
+        bEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditActionPerformed(evt);
+            }
+        });
+
+        bDelete.setText("DELETE");
+        bDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -147,6 +170,10 @@ public class framePendaftaranBuku extends frameMaster {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(bDaftarBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(bEdit)
+                .addGap(18, 18, 18)
+                .addComponent(bDelete)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -188,7 +215,10 @@ public class framePendaftaranBuku extends frameMaster {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(bDaftarBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bDaftarBuku, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bEdit)
+                            .addComponent(bDelete))
                         .addGap(81, 81, 81))))
         );
 
@@ -316,6 +346,126 @@ public class framePendaftaranBuku extends frameMaster {
         
     }//GEN-LAST:event_formWindowOpened
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void getBukuInfo(String bukuID)
+    {
+        try 
+        {
+            String sql = "SELECT * FROM buku WHERE buku_id = " + bukuID;
+            ResultSet rs = (ResultSet) db.getRS(sql);
+            if (rs.next())
+            {
+                txtJudul.setText(rs.getString("judul"));
+                txtPengarang.setText(rs.getString("pengarang"));
+                txtPenerbit.setText(rs.getString("penerbit"));
+                txtTahun.setText(rs.getString("tahun"));
+                cbKategori.setSelectedItem (rs.getString("kategori"));
+                txtLokasi.setText(rs.getString("lokasi"));
+            }
+        } 
+        catch (Exception e) 
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    private void bEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditActionPerformed
+        // TODO add your handling code here:
+        if(bEdit.getText().compareTo("EDIT") == 0)
+        {
+            bukuID = JOptionPane.showInputDialog("Masukkan BukuID");
+            if(bukuID.length() != 0)
+            {
+                getBukuInfo(bukuID);
+                bEdit.setText("SAVE");
+            }
+        }
+        else
+        {
+            judul = txtJudul.getText();
+            pengarang = txtPengarang.getText();
+            penerbit = txtPenerbit.getText();
+            tahun = txtTahun.getText();
+            kategori = cbKategori.getSelectedItem().toString();
+            lokasi = txtLokasi.getText();
+
+            try 
+            {
+                String sql = "UPDATE buku SET judul = ? , pengarang = ? , penerbit = ? , tahun = ? , kategori = ? , lokasi = ? "
+                        + " WHERE buku_id = ?";
+                PreparedStatement stmt = (PreparedStatement) db.conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+                stmt.setString(1,judul);
+                stmt.setString(2,pengarang);
+                stmt.setString(3, penerbit);
+                stmt.setInt(4,Integer.parseInt(tahun));
+                stmt.setString(5,kategori);
+                stmt.setString(6,lokasi);
+                stmt.setInt(7,Integer.parseInt(bukuID));
+                if(stmt.executeUpdate() > 0)
+                {
+                    JOptionPane.showMessageDialog(this, "Buku Berhasil Di Update");
+                    bEdit.setText("EDIT");
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this, "Buku Gagal Di Update");
+                }
+                
+            } 
+            catch (Exception e) 
+            {
+
+            }
+        }
+    }//GEN-LAST:event_bEditActionPerformed
+
+    private void bDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteActionPerformed
+        // TODO add your handling code here:
+       if(bDelete.getText().compareTo("DELETE") == 0)
+        {
+            bukuID = JOptionPane.showInputDialog("Masukkan BukuID");
+            if(bukuID.length() != 0)
+            {
+                getBukuInfo(bukuID);
+                bEdit.setVisible(false);
+                bDelete.setText("SAVE");
+            }
+        }
+        else
+        {
+
+            try 
+            {
+                String sql = "DELETE FROM buku WHERE buku_id = " + bukuID;
+                if(db.Execute(sql))
+                {
+                   JOptionPane.showMessageDialog(this, "Buku Berhasil Di Hapus");
+                    txtJudul.setText("");
+                    txtPengarang.setText("");
+                    txtPenerbit.setText("");
+                    txtTahun.setText("");
+                    cbKategori.setSelectedIndex(0);
+                    txtLokasi.setText("");
+                    
+                   bDelete.setText("DELETE");
+                   
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(this, "Buku Gagal Di Hapus");
+                }
+            } 
+            catch (Exception e) 
+            {
+
+            }
+        }
+    }//GEN-LAST:event_bDeleteActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -351,11 +501,13 @@ public class framePendaftaranBuku extends frameMaster {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bDaftarBuku;
+    public javax.swing.JButton bDaftarBuku;
+    public javax.swing.JButton bDelete;
+    public javax.swing.JButton bEdit;
     private javax.swing.JButton bUpload;
     private javax.swing.JComboBox<String> cbKategori;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblJudul;
     private javax.swing.JLabel lblKategori;

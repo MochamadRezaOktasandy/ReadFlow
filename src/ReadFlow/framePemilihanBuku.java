@@ -12,6 +12,7 @@ public class framePemilihanBuku extends JDialog {
     protected DB db = new DB();
     
     private String valBukuID = "";
+    private String valLokasi = "";
     
     public framePemilihanBuku() {
         initComponents();
@@ -182,16 +183,19 @@ public class framePemilihanBuku extends JDialog {
         //https://stackoverflow.com/questions/29345792/java-jtable-getting-the-data-of-the-selected-row
         int baris =  tblBuku.getSelectedRow();
         valBukuID = String.valueOf(tblBuku.getValueAt(baris, 0));
+        valLokasi = String.valueOf(tblBuku.getValueAt(baris, 6));
         this.dispose();
     }//GEN-LAST:event_bPilihActionPerformed
 
     private void bCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_bCancelActionPerformed
 
-    public String getBukuID()
+    public String[] getInfo()
     {
-        return valBukuID;
+        String hasil[] =  {valBukuID, valLokasi};
+        return hasil;
     }
     
     private void showTable(String s)

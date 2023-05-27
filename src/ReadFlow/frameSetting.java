@@ -63,6 +63,11 @@ public class frameSetting extends frameMaster {
         }
 
         bClose.setText("CLOSE");
+        bClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCloseActionPerformed(evt);
+            }
+        });
 
         bSave.setText("SAVE");
         bSave.addActionListener(new java.awt.event.ActionListener() {
@@ -162,6 +167,11 @@ public class frameSetting extends frameMaster {
         }
         
     }//GEN-LAST:event_bSaveActionPerformed
+
+    private void bCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCloseActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_bCloseActionPerformed
 
     /**
      * @param args the command line arguments

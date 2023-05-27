@@ -17,14 +17,15 @@ public class frameUtama extends frameMaster {
 
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        menuPeminjamanBuku = new javax.swing.JMenuItem();
+        menuPengembalianBuku = new javax.swing.JMenuItem();
+        menuDaftarBuku = new javax.swing.JMenuItem();
+        menuEditBuku = new javax.swing.JMenuItem();
+        menuHapusBuku = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         menuSetting = new javax.swing.JMenuItem();
         menuRegistrasi = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        menuDaftarBuku = new javax.swing.JMenuItem();
-        menuPeminjamanBuku = new javax.swing.JMenuItem();
-        menuPengembalianBuku = new javax.swing.JMenuItem();
-        menuDaftarPeminjam = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -44,6 +45,50 @@ public class frameUtama extends frameMaster {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 288, Short.MAX_VALUE)
         );
+
+        jMenu2.setText("Pegawai");
+
+        menuPeminjamanBuku.setText("Peminjaman Buku");
+        menuPeminjamanBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPeminjamanBukuActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuPeminjamanBuku);
+
+        menuPengembalianBuku.setText("Pengembalian Buku");
+        menuPengembalianBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPengembalianBukuActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuPengembalianBuku);
+
+        menuDaftarBuku.setText("Pendaftaran Buku");
+        menuDaftarBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuDaftarBukuActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuDaftarBuku);
+
+        menuEditBuku.setText("Edit Buku");
+        menuEditBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuEditBukuActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuEditBuku);
+
+        menuHapusBuku.setText("Hapus Buku");
+        menuHapusBuku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuHapusBukuActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuHapusBuku);
+
+        jMenuBar1.add(jMenu2);
 
         jMenu1.setText("Admin");
 
@@ -65,42 +110,6 @@ public class frameUtama extends frameMaster {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Pegawai");
-
-        menuDaftarBuku.setText("Daftar Buku");
-        menuDaftarBuku.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuDaftarBukuActionPerformed(evt);
-            }
-        });
-        jMenu2.add(menuDaftarBuku);
-
-        menuPeminjamanBuku.setText("Peminjaman Buku");
-        menuPeminjamanBuku.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuPeminjamanBukuActionPerformed(evt);
-            }
-        });
-        jMenu2.add(menuPeminjamanBuku);
-
-        menuPengembalianBuku.setText("Pengembalian Buku");
-        menuPengembalianBuku.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuPengembalianBukuActionPerformed(evt);
-            }
-        });
-        jMenu2.add(menuPengembalianBuku);
-
-        menuDaftarPeminjam.setText("Daftar Peminjam");
-        menuDaftarPeminjam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuDaftarPeminjamActionPerformed(evt);
-            }
-        });
-        jMenu2.add(menuDaftarPeminjam);
-
-        jMenuBar1.add(jMenu2);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -120,40 +129,34 @@ public class frameUtama extends frameMaster {
 
     private void menuDaftarBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDaftarBukuActionPerformed
         framePendaftaranBuku daftarBuku = new framePendaftaranBuku();
-        daftarBuku.main(null);
-        this.setVisible(false);
+        daftarBuku.setVisible(true);
+        daftarBuku.bEdit.setVisible(false);
+        daftarBuku.bDelete.setVisible(false);
     }//GEN-LAST:event_menuDaftarBukuActionPerformed
 
     private void menuPeminjamanBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPeminjamanBukuActionPerformed
         framePinjamBuku pinjamBuku = new framePinjamBuku();
+        pinjamBuku.setVisible(true);
         pinjamBuku.bKembalikan.setVisible(false);
         pinjamBuku.txtDenda.setVisible(false);
         pinjamBuku.bListKembalikan.setVisible(false);
-        pinjamBuku.setVisible(true);
-        this.setVisible(false);
+        pinjamBuku.lblTotalDenda.setVisible(false);
     }//GEN-LAST:event_menuPeminjamanBukuActionPerformed
-
-    private void menuDaftarPeminjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDaftarPeminjamActionPerformed
-        frameRegistrasi register = new frameRegistrasi();
-        register.main(null);
-        this.setVisible(false);
-    }//GEN-LAST:event_menuDaftarPeminjamActionPerformed
 
     private void menuSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSettingActionPerformed
         frameSetting setting = new frameSetting();
-        setting.main(null);
-        this.setVisible(false);
+        setting.setVisible(true);
     }//GEN-LAST:event_menuSettingActionPerformed
 
     private void menuPengembalianBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPengembalianBukuActionPerformed
         // TODO add your handling code here:
         framePinjamBuku kembalikanBuku = new framePinjamBuku();
+        kembalikanBuku.setVisible(true);
         kembalikanBuku.txtBukuYangDipinjam.setVisible(false);
         kembalikanBuku.bListTambah.setVisible(false);
         kembalikanBuku.bHitungBuku.setVisible(false);
         kembalikanBuku.bPinjam.setVisible(false);
-        kembalikanBuku.setVisible(true);
-        this.setVisible(false);
+        kembalikanBuku.jLabel4.setText("Form Pengembalian Buku");
     }//GEN-LAST:event_menuPengembalianBukuActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -166,8 +169,7 @@ public class frameUtama extends frameMaster {
             
             if(db.loggedInNamaUser.length() != 0)
             {
-                JOptionPane.showMessageDialog(this, "Anda Login Sebagai " + db.loggedInNamaUser);
-                
+                JOptionPane.showMessageDialog(this, "Selamat Datang " + db.loggedInNamaUser);
                 if(db.role.compareTo("Admin") == 0)
                 {
                     jMenu2.setEnabled(false);
@@ -175,8 +177,8 @@ public class frameUtama extends frameMaster {
                 }
                 else if(db.role.compareTo("Pegawai") == 0)
                 {
-                    jMenu1.setEnabled(false);
                     jMenu2.setEnabled(true);
+                    jMenu1.setEnabled(false);
                 }
                 else
                 {
@@ -184,15 +186,38 @@ public class frameUtama extends frameMaster {
                     System.exit(0);
                 }
             }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Silahkan Login Terlebih Dahulu!");
+                this.dispose();
+            }
         }
     }//GEN-LAST:event_formWindowOpened
 
     private void menuRegistrasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuRegistrasiActionPerformed
         // TODO add your handling code here:
         frameRegistrasi registrasi = new frameRegistrasi();
-        registrasi.cbRole.removeItemAt(2);
         registrasi.setVisible(true);
+        registrasi.cbRole.removeItemAt(2);
     }//GEN-LAST:event_menuRegistrasiActionPerformed
+
+    private void menuEditBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEditBukuActionPerformed
+        // TODO add your handling code here:
+        framePendaftaranBuku edit = new framePendaftaranBuku();
+        edit.setVisible(true);
+        edit.jLabel1.setText("EDIT BUKU");
+        edit.bDaftarBuku.setVisible(false);
+        edit.bDelete.setVisible(false);
+    }//GEN-LAST:event_menuEditBukuActionPerformed
+
+    private void menuHapusBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuHapusBukuActionPerformed
+        // TODO add your handling code here:
+        framePendaftaranBuku edit = new framePendaftaranBuku();
+        edit.setVisible(true);
+        edit.jLabel1.setText("HAPUS BUKU");
+        edit.bDaftarBuku.setVisible(false);
+        edit.bEdit.setVisible(false);
+    }//GEN-LAST:event_menuHapusBukuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,7 +261,8 @@ public class frameUtama extends frameMaster {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenuItem menuDaftarBuku;
-    private javax.swing.JMenuItem menuDaftarPeminjam;
+    private javax.swing.JMenuItem menuEditBuku;
+    private javax.swing.JMenuItem menuHapusBuku;
     private javax.swing.JMenuItem menuPeminjamanBuku;
     private javax.swing.JMenuItem menuPengembalianBuku;
     private javax.swing.JMenuItem menuRegistrasi;

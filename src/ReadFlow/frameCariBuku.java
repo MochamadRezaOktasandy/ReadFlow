@@ -24,6 +24,9 @@ public class frameCariBuku extends frameMaster {
     
     public frameCariBuku() {
         initComponents();
+        
+        txtPilihBuku.setEnabled(false);
+        txtLokasi.setEnabled(false);
     }
 
     
@@ -40,7 +43,7 @@ public class frameCariBuku extends frameMaster {
         bClose = new javax.swing.JButton();
         lblSampul = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -49,7 +52,7 @@ public class frameCariBuku extends frameMaster {
         });
 
         lblPilihBuku.setFont(new java.awt.Font("SimSun", 0, 13)); // NOI18N
-        lblPilihBuku.setText("Pilih Buku");
+        lblPilihBuku.setText("Pilih Buku (DOUBLE CLICK)");
 
         lblJudulPeminjaman.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 18)); // NOI18N
         lblJudulPeminjaman.setText("KIOSK - Cari Buku");
@@ -147,8 +150,7 @@ public class frameCariBuku extends frameMaster {
     
     private void bCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCloseActionPerformed
         // TODO add your handling code here:
-        pilihBuku = txtPilihBuku.getText();
-        lokasiBuku = txtLokasi.getText();
+        this.dispose();
     }//GEN-LAST:event_bCloseActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -165,8 +167,11 @@ public class frameCariBuku extends frameMaster {
             framePemilihanBuku pilihBuku = new framePemilihanBuku();
             //pilihBuku.main(null); //JANGAN PANGGIL MAIN DISINI
             pilihBuku.setVisible(true); //Tampilkan JFRAME dengan ini
-            bukuID = pilihBuku.getBukuID(); //Ambil Nilai Disini, getBukuID() ada di frame yang kita show
+            bukuID = pilihBuku.getInfo()[0]; //Ambil Nilai Disini, getBukuID() ada di frame yang kita show
+            lokasiBuku = pilihBuku.getInfo()[1];
             txtPilihBuku.setText(bukuID);
+            txtLokasi.setText(lokasiBuku);
+            
             showSampul();
         }
     }//GEN-LAST:event_txtPilihBukuMouseClicked

@@ -4,6 +4,6 @@ public class ReadFlow {
     public static void main(String[] args) 
     {
         frameLogin login = new frameLogin();
-        login.main(null);
+        login.setVisible(true);
     }
 }
