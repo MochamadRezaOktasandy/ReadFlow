@@ -146,7 +146,7 @@ public class frameLogin extends JDialog {
 
     private void lblRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegisterMouseClicked
         // TODO add your handling code here:
-        frameRegister register = new frameRegister();
+        frameRegistrasi register = new frameRegistrasi();
         register.main(null);
         this.dispose();
     }//GEN-LAST:event_lblRegisterMouseClicked

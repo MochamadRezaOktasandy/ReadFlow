@@ -255,7 +255,6 @@ public class framePinjamBuku extends frameMaster {
     }
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
         hariIni = new Date();
         txtTanggal.setDate(hariIni);// Mengatur tanggal hari ini
         txtTanggal.setEnabled(false);//Menonaktifkan jDateChooser agar tidak bisa diklik
@@ -268,7 +267,6 @@ public class framePinjamBuku extends frameMaster {
     }//GEN-LAST:event_formWindowOpened
 
     private void bPinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPinjamActionPerformed
-        // TODO add your handling code here:
         
         if(model.getRowCount() < 1)
         {
@@ -355,7 +353,6 @@ public class framePinjamBuku extends frameMaster {
     }
     
     private void bKembalikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bKembalikanActionPerformed
-        // TODO add your handling code here:
         if(model.getRowCount() < 1)
         {
             JOptionPane.showMessageDialog(this, "Masukkan Buku Untuk Dikembalikan!");
@@ -410,7 +407,6 @@ public class framePinjamBuku extends frameMaster {
     }//GEN-LAST:event_bKembalikanActionPerformed
 
     private void bHitungBukuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHitungBukuActionPerformed
-        // TODO add your handling code here:
         try 
         {
             String sql = "SELECT COUNT(buku_id) AS jml_buku FROM pinjam WHERE username = '" + txtUsername.getText() + "' AND tgl_actual_kembali is NULL";
@@ -426,7 +422,6 @@ public class framePinjamBuku extends frameMaster {
     }//GEN-LAST:event_bHitungBukuActionPerformed
 
     private void bListKembalikanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bListKembalikanActionPerformed
-        // TODO add your handling code here:
         buku_id = txtBukuID.getText();
         username = txtUsername.getText();
         

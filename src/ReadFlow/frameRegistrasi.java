@@ -10,7 +10,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.nio.charset.StandardCharsets;
 
-public class frameRegister extends frameMaster {
+public class frameRegistrasi extends frameMaster {
 
     public String username = "";
     public String nama = "";
@@ -21,9 +21,8 @@ public class frameRegister extends frameMaster {
     public String password = "";
     public String conPassword = "";
     
-    public frameRegister() {
+    public frameRegistrasi() {
         initComponents();
-        cbRole.setVisible(false);
     }
 
     
@@ -378,21 +377,27 @@ public class frameRegister extends frameMaster {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frameRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frameRegistrasi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frameRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frameRegistrasi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frameRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frameRegistrasi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frameRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frameRegistrasi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frameRegister().setVisible(true);
+                new frameRegistrasi().setVisible(true);
             }
         });
     }
@@ -400,7 +405,7 @@ public class frameRegister extends frameMaster {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bRegister;
     private javax.swing.JCheckBox cbCFShowPassword1;
-    private javax.swing.JComboBox<String> cbRole;
+    public javax.swing.JComboBox<String> cbRole;
     private javax.swing.JCheckBox cbShowPassword;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
