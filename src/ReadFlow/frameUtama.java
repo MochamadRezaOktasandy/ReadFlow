@@ -29,7 +29,7 @@ public class frameUtama extends frameMaster {
         menuRegistrasi = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Utama");
+        setTitle("Frame Utama");
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
