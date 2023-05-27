@@ -41,7 +41,7 @@ public class frameUtama extends frameMaster {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/First ReadFlow.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 260, 270));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 260, 270));
 
         jMenu2.setText("Pegawai");
 
@@ -113,11 +113,11 @@ public class frameUtama extends frameMaster {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
         );
 
         pack();
@@ -152,6 +152,7 @@ public class frameUtama extends frameMaster {
         kembalikanBuku.bListTambah.setVisible(false);
         kembalikanBuku.bHitungBuku.setVisible(false);
         kembalikanBuku.bPinjam.setVisible(false);
+        kembalikanBuku.jLabel1.setVisible(false);
         kembalikanBuku.jLabel4.setText("Form Pengembalian Buku");
         kembalikanBuku.setVisible(true);
     }//GEN-LAST:event_menuPengembalianBukuActionPerformed
@@ -214,6 +215,7 @@ public class frameUtama extends frameMaster {
         edit.jLabel1.setText("HAPUS BUKU");
         edit.bDaftarBuku.setVisible(false);
         edit.bEdit.setVisible(false);
+        edit.bDelete.setVisible(true);
     }//GEN-LAST:event_menuHapusBukuActionPerformed
 
     /**

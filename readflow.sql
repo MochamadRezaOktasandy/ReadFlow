@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.4.28-MariaDB - mariadb.org binary distribution
+-- Server version:               10.4.16-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win64
 -- HeidiSQL Version:             12.4.0.6659
 -- --------------------------------------------------------
@@ -16,7 +16,7 @@
 
 
 -- Dumping database structure for readflow
-CREATE DATABASE IF NOT EXISTS `readflow` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+CREATE DATABASE IF NOT EXISTS `readflow` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `readflow`;
 
 -- Dumping structure for table readflow.buku
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `buku` (
   `lokasi` varchar(50) DEFAULT NULL,
   `sampul` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`buku_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table readflow.buku: ~33 rows (approximately)
 REPLACE INTO `buku` (`buku_id`, `judul`, `pengarang`, `penerbit`, `tahun`, `kategori`, `lokasi`, `sampul`) VALUES
@@ -43,7 +43,7 @@ REPLACE INTO `buku` (`buku_id`, `judul`, `pengarang`, `penerbit`, `tahun`, `kate
 	(7, 'Gadis Pantai', 'Pramoedya Ananta Toer', 'Hasta Mitra', 1985, 'Fiksi', NULL, NULL),
 	(8, 'Dilan: Dia adalah Dilanku tahun 1990', 'Pidi Baiq', 'Dar! Mizan', 2014, 'Fiksi', NULL, NULL),
 	(9, 'Negeri 5 Menara', 'Ahmad Fuadi', 'Gramedia Pustaka Utama', 2009, 'Fiksi', NULL, NULL),
-	(10, 'Sang Alchemist', 'Paulo Coelho', 'HarperCollins', 1988, 'Fiksi', NULL, NULL),
+	(10, 'Sang Alchemist', 'Paulo Coelho', 'HarperCollins', 1988, 'Fiksi', 'RAK 3B', NULL),
 	(11, 'Ayah', 'Andrea Hirata', 'Bentang Pustaka', 2011, 'Fiksi', NULL, NULL),
 	(12, 'Lima Sekawan', 'Enid Blyton', 'Egmont Group', 1942, 'Petualangan', NULL, NULL),
 	(13, 'Perahu Kertas', 'Dee Lestari', 'Bentang Pustaka', 2009, 'Fiksi', NULL, NULL),
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `username` varchar(50) DEFAULT NULL,
   `feedback` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`feedback_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table readflow.feedback: ~2 rows (approximately)
 REPLACE INTO `feedback` (`feedback_id`, `tanggal`, `username`, `feedback`) VALUES
@@ -91,13 +91,15 @@ CREATE TABLE IF NOT EXISTS `member` (
   `no_telp` varchar(20) DEFAULT NULL,
   `alamat` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`username`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table readflow.member: ~3 rows (approximately)
+-- Dumping data for table readflow.member: ~5 rows (approximately)
 REPLACE INTO `member` (`username`, `nama`, `tgl_lahir`, `email`, `no_telp`, `alamat`) VALUES
 	('afjar', 'Afjar Maulana', '2002-08-15', 'afjar@gmail.com', '087867216721', 'Jalan pisangan'),
 	('ammar', 'test', '2023-05-01', 'asdasasasd', '1232121312123', 'asdasdasdasdasdasdasdas'),
-	('imam', 'Muhammad Imam Wicaksono', '2003-05-27', 'imam@gmail.com', '089765782245', 'Jl Pasar Nangka');
+	('imam', 'Muhammad Imam Wicaksono', '2003-05-27', 'imam@gmail.com', '089765782245', 'Jl Pasar Nangka'),
+	('jare', 'Afjar Maulana Malik Syaputra', '1990-08-15', 'afjarmaulana@gmail.com', '081234567812', 'JL. PISANGAN TIMUR'),
+	('ndutz75', 'Mochamad Reza Oktasandy', '2003-10-08', 'sandyndutz75@gmail.com', '0895384141716', 'JL. SUMBER PELITA');
 
 -- Dumping structure for table readflow.pinjam
 CREATE TABLE IF NOT EXISTS `pinjam` (
@@ -109,30 +111,32 @@ CREATE TABLE IF NOT EXISTS `pinjam` (
   `tgl_actual_kembali` date DEFAULT NULL,
   `denda` int(11) DEFAULT NULL,
   PRIMARY KEY (`pinjam_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table readflow.pinjam: ~11 rows (approximately)
+-- Dumping data for table readflow.pinjam: ~8 rows (approximately)
 REPLACE INTO `pinjam` (`pinjam_id`, `tgl_pinjam`, `tgl_kembali`, `username`, `buku_id`, `tgl_actual_kembali`, `denda`) VALUES
-	(1, '2023-05-23', '2023-06-06', 'ammar', 1, NULL, NULL),
+	(1, '2023-05-23', '2023-06-06', 'ammar', 1, NULL, 18000),
 	(2, '2023-05-23', '2023-06-06', 'septi', 5, NULL, NULL),
 	(3, '2023-05-23', '2023-06-06', 'reza', 10, NULL, NULL),
 	(4, '2023-05-23', '2023-05-06', 'marsya', 1, '2023-05-26', 40000),
 	(5, '2023-05-23', '2023-04-06', 'marsya', 12, '2023-05-26', 50000),
-	(6, '2023-07-30', '2023-08-13', 'ammar', 5, '2023-08-17', 8000),
-	(7, '2023-06-20', '2023-07-04', 'ammar', 3, '2023-06-30', 0),
-	(8, '2023-11-03', '2023-11-17', 'ammar', 7, '2023-11-11', 0),
-	(9, '2023-05-26', '2023-06-09', 'marsya', 1, NULL, NULL),
-	(116, '2023-05-27', '2023-06-10', 'imam', 41, NULL, NULL),
-	(117, '2023-05-27', '2023-06-10', 'imam', 1, NULL, NULL);
+	(120, '2023-05-27', '2023-05-10', 'ammar', 41, NULL, 26000),
+	(121, '2023-05-27', '2023-05-10', 'ammar', 50, NULL, 26000),
+	(122, '2023-05-27', '2023-06-10', 'ammar', 53, NULL, 0);
 
 -- Dumping structure for table readflow.setting
 CREATE TABLE IF NOT EXISTS `setting` (
   `nama_param` varchar(50) DEFAULT NULL,
   `nilai_param` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table readflow.setting: ~5 rows (approximately)
+-- Dumping data for table readflow.setting: ~10 rows (approximately)
 REPLACE INTO `setting` (`nama_param`, `nilai_param`) VALUES
+	('LAMA_PINJAM', '14'),
+	('FOLDER_COVER_BUKU', 'img'),
+	('MAKSIMAL_PINJAM_BUKU', '4'),
+	('DENDA_1HARI', '2000'),
+	('DENDA_MAKS', '50000'),
 	('LAMA_PINJAM', '14'),
 	('FOLDER_COVER_BUKU', 'img'),
 	('MAKSIMAL_PINJAM_BUKU', '4'),
@@ -145,17 +149,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` char(32) DEFAULT NULL,
   `role` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table readflow.user: ~7 rows (approximately)
+-- Dumping data for table readflow.user: ~5 rows (approximately)
 REPLACE INTO `user` (`username`, `password`, `role`) VALUES
 	('afjar', '25d55ad283aa400af464c76d713c07ad', 'Pegawai'),
 	('ammar', '4124bc0a9335c27f086f24ba207a4912', 'Admin'),
 	('imam', '25d55ad283aa400af464c76d713c07ad', 'User'),
-	('marsya', '12345678', NULL),
-	('reza', '12345678', 'Pegawai'),
-	('septi', '12345678', NULL),
-	('user', '12345678', NULL);
+	('jare', '25d55ad283aa400af464c76d713c07ad', 'Admin'),
+	('ndutz75', '047fd1912fb502d6b88edd84ec79b19d', 'User');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

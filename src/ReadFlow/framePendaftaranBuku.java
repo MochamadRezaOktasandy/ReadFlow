@@ -118,7 +118,7 @@ public class framePendaftaranBuku extends frameMaster {
                 bDaftarBukuActionPerformed(evt);
             }
         });
-        jPanel1.add(bDaftarBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 90, 33));
+        jPanel1.add(bDaftarBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 90, 33));
 
         cbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(cbKategori, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 330, 201, -1));
@@ -139,7 +139,7 @@ public class framePendaftaranBuku extends frameMaster {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 670, 90, 40));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, 90, 40));
 
         bEdit.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         bEdit.setText("EDIT");
@@ -148,7 +148,7 @@ public class framePendaftaranBuku extends frameMaster {
                 bEditActionPerformed(evt);
             }
         });
-        jPanel1.add(bEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 90, 30));
+        jPanel1.add(bEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 90, 30));
 
         bDelete.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         bDelete.setText("DELETE");
@@ -157,20 +157,20 @@ public class framePendaftaranBuku extends frameMaster {
                 bDeleteActionPerformed(evt);
             }
         });
-        jPanel1.add(bDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 90, 30));
+        jPanel1.add(bDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 90, 30));
 
         lblBuku.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo/buku.png"))); // NOI18N
-        jPanel1.add(lblBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 140, 130));
+        jPanel1.add(lblBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 140, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 747, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

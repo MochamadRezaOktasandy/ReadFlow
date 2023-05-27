@@ -60,6 +60,7 @@ public class framePinjamBuku extends frameMaster {
         });
 
         jPanel1.setBackground(new java.awt.Color(59, 171, 149));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblBuku.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,15 +77,22 @@ public class framePinjamBuku extends frameMaster {
         jScrollPane1.setViewportView(tblBuku);
         tblBuku.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 157, 520, 275));
+
         bListTambah.setText("List Tambah");
         bListTambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bListTambahActionPerformed(evt);
             }
         });
+        jPanel1.add(bListTambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 122, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel4.setText("form peminjaman buku");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 6, -1, -1));
+        jPanel1.add(txtTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 57, 140, -1));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 105, 140, -1));
+        jPanel1.add(txtBukuID, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 81, 110, -1));
 
         bPinjam.setText("PINJAM");
         bPinjam.addActionListener(new java.awt.event.ActionListener() {
@@ -92,6 +100,7 @@ public class framePinjamBuku extends frameMaster {
                 bPinjamActionPerformed(evt);
             }
         });
+        jPanel1.add(bPinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 467, 118, 35));
 
         bClose.setText("CLOSE");
         bClose.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +108,7 @@ public class framePinjamBuku extends frameMaster {
                 bCloseActionPerformed(evt);
             }
         });
+        jPanel1.add(bClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 497, -1, 35));
 
         bKembalikan.setText("KEMBALIKAN");
         bKembalikan.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +116,9 @@ public class framePinjamBuku extends frameMaster {
                 bKembalikanActionPerformed(evt);
             }
         });
+        jPanel1.add(bKembalikan, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 467, -1, 35));
+        jPanel1.add(txtDenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 473, 86, -1));
+        jPanel1.add(txtBukuYangDipinjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 47, 110, -1));
 
         bHitungBuku.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 12)); // NOI18N
         bHitungBuku.setText("Hitung Buku");
@@ -114,6 +127,7 @@ public class framePinjamBuku extends frameMaster {
                 bHitungBukuActionPerformed(evt);
             }
         });
+        jPanel1.add(bHitungBuku, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 49, -1, -1));
 
         bListKembalikan.setText("List Kembalikan");
         bListKembalikan.addActionListener(new java.awt.event.ActionListener() {
@@ -121,134 +135,26 @@ public class framePinjamBuku extends frameMaster {
                 bListKembalikanActionPerformed(evt);
             }
         });
+        jPanel1.add(bListKembalikan, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, -1, -1));
 
         lblTotalDenda.setText("Total Denda");
+        jPanel1.add(lblTotalDenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(287, 450, -1, -1));
 
         lblTanggal.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
         lblTanggal.setText("Tanggal");
+        jPanel1.add(lblTanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 35, 59, -1));
 
         lblUsername.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
         lblUsername.setText("username");
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 85, 65, -1));
 
         jLabel1.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
         jLabel1.setText("Total Buku");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 47, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
         jLabel2.setText("ID Buku");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(bClose)
-                        .addGap(47, 47, 47))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblTotalDenda)
-                        .addGap(214, 214, 214))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(152, 152, 152)
-                                        .addComponent(bListTambah)
-                                        .addGap(146, 146, 146))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(62, 62, 62)
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(bListKembalikan)
-                                        .addGap(18, 18, 18))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(62, 62, 62)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jLabel4)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(18, 18, 18)
-                    .addComponent(bPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(bKembalikan)
-                    .addGap(18, 18, 18)
-                    .addComponent(txtDenda, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(47, 47, Short.MAX_VALUE))
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(308, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtBukuID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtBukuYangDipinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(bHitungBuku)
-                    .addGap(20, 20, 20))
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(13, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(bListKembalikan)
-                        .addGap(15, 15, 15)
-                        .addComponent(bListTambah))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(lblTanggal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblUsername)
-                        .addGap(4, 4, 4)
-                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
-                .addComponent(lblTotalDenda)
-                .addGap(31, 31, 31)
-                .addComponent(bClose, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(47, 47, 47)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtBukuYangDipinjam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bHitungBuku))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(txtBukuID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(47, 47, 47)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(47, 47, 47)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bPinjam, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bKembalikan, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtDenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(48, Short.MAX_VALUE)))
-        );
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 85, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -394,7 +300,7 @@ public class framePinjamBuku extends frameMaster {
         
     }//GEN-LAST:event_bPinjamActionPerformed
 
-    private int hitungDenda(Date tglKembali)
+    private int hitungDenda(Date tglKembali) //tglKembali adalah tanggal harusnya kembali
     {
         int denda = 0;
                 
@@ -402,7 +308,13 @@ public class framePinjamBuku extends frameMaster {
         {
             //dapatkan denda perhari
             int dendaPerHari = Integer.parseInt(db.getSettingValue("DENDA_1HARI"));
-            long selisih = Math.abs(tglKembali.getTime() - hariIni.getTime());
+            long selisih =  hariIni.getTime() - tglKembali.getTime();
+             if(selisih < 0)
+             {
+                denda = 0;
+                return denda;
+             }
+                
             
             //https://www.ardhi.web.id/2019/05/java-menghitung-selisih-tanggal.html
 //            long diffSeconds = diff / 1000;
@@ -414,6 +326,7 @@ public class framePinjamBuku extends frameMaster {
             
             
             denda = (int) (selisih * dendaPerHari);
+           
             
             //Dapatkan maksimal Denda
             int maksDenda = Integer.parseInt(db.getSettingValue("DENDA_MAKS"));
@@ -445,7 +358,6 @@ public class framePinjamBuku extends frameMaster {
                 return;
             }
             
-            this.totalDenda = 0;
             for (int i = 0; i < model.getRowCount(); i++)
             {
                 buku_id = tblBuku.getModel().getValueAt(i, 0).toString();
@@ -459,9 +371,7 @@ public class framePinjamBuku extends frameMaster {
                     int pinjam_id = rs.getInt("pinjam_id");
                     Date tglKembali = rs.getDate("tgl_kembali");
                     
-                    //Hitung Denda
                     int denda = hitungDenda(tglKembali);
-                    this.totalDenda += denda;
                     
                     sql = "UPDATE pinjam SET tgl_actual_kembali = '" + df.format(hariIni) + "', denda = " + denda + " WHERE pinjam_id = " + pinjam_id + "";
                     boolean succes = db.Execute(sql);
@@ -500,12 +410,23 @@ public class framePinjamBuku extends frameMaster {
         
         try 
         {
-            String sql = "SELECT pinjam_id FROM pinjam WHERE username = '" + username + "' AND buku_id = " + buku_id + " AND tgl_actual_kembali is NULL";
+            String sql = "SELECT pinjam_id, tgl_kembali FROM pinjam WHERE username = '" + username + "' AND buku_id = " + buku_id + " AND tgl_actual_kembali is NULL";
             ResultSet rs = (ResultSet) db.getRS(sql);
             if (rs.next())
             {
                 int pinjamId = rs.getInt("pinjam_id");
+                if (cekBukuAdaDiTable(buku_id))
+                {
+                    JOptionPane.showMessageDialog(this, "Buku ID Sudah Ada DiTable");
+                    return;
+                }
                 tambahBaris(buku_id);
+                
+                //Hitung Denda
+                Date tglKembali = rs.getDate("tgl_kembali");
+                int denda = hitungDenda(tglKembali);
+                this.totalDenda += denda;
+                txtDenda.setText(Integer.toString(totalDenda));
             }
             else
             {
@@ -566,7 +487,7 @@ public class framePinjamBuku extends frameMaster {
     public javax.swing.JButton bListKembalikan;
     public javax.swing.JButton bListTambah;
     public javax.swing.JButton bPinjam;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
