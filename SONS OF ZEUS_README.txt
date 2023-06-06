@@ -2,6 +2,7 @@ File ini menjelaskan kelengkapan berkas proyek akhir kami yang berjudul ReadFlow
 File database sql dengan nama database: ReadFlow
 Source code project NetBeans
 Link Repository GitHub: https://github.com/MochamadRezaOktasandy/ReadFlow
+Link Youtube tempat unggah video demo proyek akhir: https://youtu.be/6_1sEsCLWeU
 
 Kelompok Sons Of Zeus:
 Mochamad Reza Oktasandy, B, 1402022034

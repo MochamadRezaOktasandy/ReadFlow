@@ -415,11 +415,6 @@ public class framePinjamBuku extends frameMaster {
             if (rs.next())
             {
                 int pinjamId = rs.getInt("pinjam_id");
-                if (cekBukuAdaDiTable(buku_id))
-                {
-                    JOptionPane.showMessageDialog(this, "Buku ID Sudah Ada DiTable");
-                    return;
-                }
                 tambahBaris(buku_id);
                 
                 //Hitung Denda

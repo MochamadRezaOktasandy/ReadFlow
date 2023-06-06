@@ -163,6 +163,7 @@ public class frameUtama extends frameMaster {
         if(db.loggedInNamaUser.length() == 0)
         {
             frameLogin login = new frameLogin();
+            login.lblRegister.setVisible(false);
             login.setVisible(true);
             
             if(db.loggedInNamaUser.length() != 0)

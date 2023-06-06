@@ -1,5 +1,6 @@
 package ReadFlow;
 
+import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -130,25 +131,28 @@ public class frameSetting extends frameMaster {
 
     private void bSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSaveActionPerformed
         // TODO add your handling code here:
+        boolean success = false;
         try 
         {
-            for (int i = 0; i < model.getRowCount(); i++)
+            for (int i = 0; i < model.getRowCount(); i++) 
             {
-                String namaParamBaru = tblSetting.getModel().getValueAt(i, 0).toString(); 
-                String nilaiParamBaru = tblSetting.getModel().getValueAt(i, 1).toString(); 
-                String sql = "UPDATE setting SET nilai_param = '" + nilaiParamBaru + "' WHERE nama_param = '" + namaParamBaru + "'";
-                boolean succes = db.Execute(sql);
-                if (succes) 
-                {
-                    JOptionPane.showMessageDialog(this, "Nilai Param Berhasil Diupdate");
-                    break;
-                }
+                String namaParamBaru = tblSetting.getModel().getValueAt(i, 0).toString();
+                String nilaiParamBaru = tblSetting.getModel().getValueAt(i, 1).toString();
+                String sql = "UPDATE setting SET nilai_param = ? WHERE nama_param = ?";
+                PreparedStatement statement = (PreparedStatement) db.conn.prepareStatement(sql);
+                statement.setString(1, nilaiParamBaru);
+                statement.setString(2, namaParamBaru);
+                int rowsUpdated = statement.executeUpdate();
+                if (rowsUpdated > 0) 
+                    success = true;
             }
+            if (success) 
+                JOptionPane.showMessageDialog(this, "Nilai Param Berhasil Diupdate");
         } 
         catch (Exception e) 
         {
+            e.printStackTrace();
         }
-        
     }//GEN-LAST:event_bSaveActionPerformed
 
     private void bCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCloseActionPerformed
