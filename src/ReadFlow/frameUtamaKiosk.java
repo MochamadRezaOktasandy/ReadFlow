@@ -22,6 +22,7 @@ public class frameUtamaKiosk extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Frame Utama Kiosk");
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(59, 171, 149));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
